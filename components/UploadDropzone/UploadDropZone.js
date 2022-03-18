@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { useDropzone } from 'react-dropzone';
 import clsx from 'classnames';
 import styles from './upload_dropzone.module.scss';
@@ -62,14 +62,14 @@ const UploadDropZone = ({ isDisabled, setFile}) => {
         })}
       >
         <input {...getInputProps()} className={styles.inputUpload} />
-        <div className={styles.uploadIcon}>
+        {/* <div className={styles.uploadIcon}>
           <Image
             src="/upload-icon.svg"
             alt="upload icon"
             layout="fill"
             objectFit="fill"
           />
-        </div>
+        </div> */}
         <p className={styles.textBtn}>
           Drag &#38; Drop files here or{' '}
           <span className={styles.chooseFile} onClick={open}>
@@ -84,14 +84,14 @@ const UploadDropZone = ({ isDisabled, setFile}) => {
           onClick={removeFileHandler}
         >
           <div className={styles.dropedDocument}>
-            <div className={styles.docIconContainer}>
+            {/* <div className={styles.docIconContainer}>
               <Image
                 src="/doc-icon.svg"
                 alt="document icon"
                 layout="fill"
                 objectFit="fill"
               />
-            </div>
+            </div> */}
             <p className={styles.fileName}>{docFile[0].name}</p>
           </div>
           <CloseIcon
