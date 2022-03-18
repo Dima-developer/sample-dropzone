@@ -44,7 +44,6 @@ export default function Index() {
         method="POST"
         data-netlify="true"
         onSubmit={handleSubmit} 
-        // data-netlify-honeypot="bot-field"
         >
         <input id='name' type="hidden" name="form-name" value="sampleform" />
 
