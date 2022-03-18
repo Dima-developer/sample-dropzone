@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+//imports
+@import './mixins';
+@import './normalize';
+
+// Accordion transition
+.accord-answer {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: #fff;
+  p {
+    @include font-property(HK Grotesk-Regular, 16px, 25px, 400, normal);
+    color: #7a838d;
+  }
+}
+
+.accord-answer-enter {
+  max-height: 0;
+  padding: 0 20px;
+}
+.accord-answer-enter-active {
+  max-height: 400px;
+  padding: 20px;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+}
+.accord-answer-exit {
+  max-height: 400px;
+  padding: 20px;
+}
+.accord-answer-exit-active {
+  max-height: 0;
+  padding: 0 20px;
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+}
+
+.formContainer {
+  display: block;
+  position: relative;
+  width: 700px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 50px auto;
+}
+
+
+@media only screen and (min-width: 1200px) {
+  .accord-answer {
+    p {
+      font-size: 18px;
+      line-height: 29px;
+    }
+  }
+}
+
+//------------------------------------FreightBigPro------------------------------//
+@font-face {
+  font-family: 'FreightBigProMedium';
+  src: url('./fonts/FreightBigProMedium-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    // url('./fonts/FreightBigProMedium-Regular.woff2') format('woff2'),
+    url('./fonts/FreightBigProMedium-Regular.woff') format('woff'),
+    url('./fonts/FreightBigProMedium-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FreightBigProSemibold';
+  src: url('./fonts/FreightBigProSemibold-Regular.eot');
+  src: url('./fonts/FreightBigProSemibold-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    // url('./fonts/FreightBigProSemibold-Regular.woff2') format('woff2'),
+    url('./fonts/FreightBigProSemibold-Regular.woff') format('woff'),
+    url('./fonts/FreightBigProSemibold-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'FreightBigProLight';
+  src: url('./fonts/FreightBigProLight-Regular.eot');
+  src: url('./fonts/FreightBigProLight-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    // url('./fonts/FreightBigProLight-Regular.woff2') format('woff2'),
+    url('./fonts/FreightBigProLight-Regular.woff') format('woff'),
+    url('./fonts/FreightBigProLight-Regular.ttf') format('truetype');
+}
+// -------------------------------HK Grotesk---------------------------------//
+@font-face {
+  font-family: 'HK Grotesk-Regular';
+  src: url('./fonts/HKGrotesk-Regular.eot');
+  src: url('./fonts/HKGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+    // url('./fonts/HKGrotesk-Regular.woff2') format('woff2'),
+    url('./fonts/HKGrotesk-Regular.woff') format('woff'),
+    url('./fonts/HKGrotesk-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HK Grotesk-Medium';
+  src: url('./fonts/HKGrotesk-Medium.eot');
+  src: url('./fonts/HKGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+    // url('./fonts/HKGrotesk-Medium.woff2') format('woff2'),
+    url('./fonts/HKGrotesk-Medium.woff') format('woff'),
+    url('./fonts/HKGrotesk-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HK Grotesk-SemiBold';
+  src: url('./fonts/HKGrotesk-SemiBold.eot');
+  src: url('./fonts/HKGrotesk-SemiBold.eot?#iefix') format('embedded-opentype'),
+    // url('./fonts/HKGrotesk-SemiBold.woff2') format('woff2'),
+    url('./fonts/HKGrotesk-SemiBold.woff') format('woff'),
+    url('./fonts/HKGrotesk-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HK Grotesk-Bold';
+  src: url('./fonts/HKGrotesk-Bold.eot');
+  src: url('./fonts/HKGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+    // url('./fonts/HKGrotesk-Bold.woff2') format('woff2'),
+    url('./fonts/HKGrotesk-Bold.woff') format('woff'),
+    url('./fonts/HKGrotesk-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HK Grotesk-Light';
+  src: url('./fonts/HKGrotesk-Light.eot');
+  src: url('./fonts/HKGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+    // url('./fonts/HKGrotesk-Light.woff2') format('woff2'),
+    url('./fonts/HKGrotesk-Light.woff') format('woff'),
+    url('./fonts/HKGrotesk-Light.ttf') format('truetype');
+}

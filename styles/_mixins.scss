@@ -1,0 +1,28 @@
+@mixin font-property(
+  $fontFamily,
+  $fontSize,
+  $lineHeight,
+  $fontWeight,
+  $fontStyle
+) {
+  font: {
+    family: $fontFamily;
+    size: $fontSize;
+    weight: $fontWeight;
+    style: $fontStyle;
+  }
+  line-height: $lineHeight;
+};
+
+@mixin imageNextDivProperty($width, $height) {
+  display: block;
+  position: relative;
+  width: $width;
+  height: $height;
+}
+@mixin containerProperty($display, $width, $padding) {
+  display: $display;
+  position: relative;
+  width: $width;
+  padding: $padding;
+}
