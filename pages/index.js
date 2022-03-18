@@ -23,7 +23,8 @@ export default function Index() {
   }
   const handleSubmit = e => {
     const data = { "form-name": "sampleform", name, file }
-    
+    console.log('Data: ', data);
+
     fetch("/", {
       method: "POST",
       // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
@@ -43,7 +44,7 @@ export default function Index() {
         method="POST"
         data-netlify="true"
         onSubmit={handleSubmit} 
-        action="/thank-you/"
+        // data-netlify-honeypot="bot-field"
         >
         <input id='name' type="hidden" name="form-name" value="sampleform" />
 
