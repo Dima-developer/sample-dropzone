@@ -22,7 +22,7 @@ export default function Index() {
     return formData
   }
   const handleSubmit = e => {
-    const data = { "form-name": "sampleForm", name, file }
+    const data = { "form-name": "sampleform", name, file }
     
     fetch("/", {
       method: "POST",
@@ -39,20 +39,20 @@ export default function Index() {
     <div>
       <form
         className="formContainer"
-        name="sampleForm"
+        name="sampleform"
         method="POST"
-        action="/thank-you/"
-        // data-netlify="true"
+        data-netlify="true"
         onSubmit={handleSubmit} 
-      >
-        {/* <input id='name' type="hidden" name="form-name" value="sampleForm" /> */}
+        action="/thank-you/"
+        >
+        <input id='name' type="hidden" name="form-name" value="sampleform" />
 
-        <input type='text' name='Name' onChange={(e) => nameHandler(e)} />
         <label htmlFor='name'>Name: </label>
+        <input type='text' name='name' value={name} onChange={(e) => nameHandler(e)} />
 
         <UploadDropzone isDisabled={false} setFile={setFile} />
         
-        <button style={{marginTop: '15px'}} type="submit" >Submit</button>
+        <button style={{marginTop: '15px'}} type="submit">Submit</button>
      </form>
     </div>
   )
