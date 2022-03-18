@@ -11,6 +11,7 @@ export default function Index() {
   }
 
   console.log('name: ', name);
+  console.log('file: ', file);
 
   const encode = (data) => {
     console.log('data: ', data)
@@ -46,7 +47,7 @@ export default function Index() {
         <input id='name' type="hidden" name="form-name" value="sampleForm" />
         <label htmlFor='name'>Name: </label>
         <input type='text' name='Name' onChange={(e) => nameHandler(e)} />
-        <UploadDropzone isDisabled={false} docFile={file} setDocFile={setFile} />
+        <UploadDropzone isDisabled={false} setFile={setFile} />
         
         <button style={{marginTop: '15px'}} type="submit" >Submit</button>
      </form>

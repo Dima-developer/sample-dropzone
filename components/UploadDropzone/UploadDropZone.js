@@ -19,12 +19,15 @@ const UploadDropZone = ({ isDisabled, setFile}) => {
   }, [isDisabled]);
 
   useEffect(() => {
+    // setFile(docFile[0]);
     if (docFile.length > 0) {
-      setFile(docFile[0])
+      setFile(docFile[0]);
+    } else {
+      setFile({})
     }
-  }, [docFile])
+  }, [docFile]);
   
-  console.log('docFile Array: ', docFile[0]);
+  // console.log('docFile Array: ', docFile);
 
   const onDrop = useCallback((accFiles, rejFiles) => {
     setDocFile(accFiles);
