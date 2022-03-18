@@ -41,12 +41,15 @@ export default function Index() {
         className="formContainer"
         name="sampleForm"
         method="POST"
-        data-netlify="true"
+        action="/thank-you/"
+        // data-netlify="true"
         onSubmit={handleSubmit} 
       >
-        <input id='name' type="hidden" name="form-name" value="sampleForm" />
-        <label htmlFor='name'>Name: </label>
+        {/* <input id='name' type="hidden" name="form-name" value="sampleForm" /> */}
+
         <input type='text' name='Name' onChange={(e) => nameHandler(e)} />
+        <label htmlFor='name'>Name: </label>
+
         <UploadDropzone isDisabled={false} setFile={setFile} />
         
         <button style={{marginTop: '15px'}} type="submit" >Submit</button>
