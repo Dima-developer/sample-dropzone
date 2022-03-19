@@ -50,7 +50,9 @@ export default function Index() {
         <label htmlFor='name'>Name: </label>
         <input type='text' name='name' value={name} onChange={(e) => nameHandler(e)} />
 
-        <UploadDropzone isDisabled={false} setFile={setFile} />
+        
+
+        <UploadDropzone name="File" isDisabled={false} setFile={setFile} />
         
         <button style={{marginTop: '15px'}} type="submit">Submit</button>
      </form>

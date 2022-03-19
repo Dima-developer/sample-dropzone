@@ -5,7 +5,7 @@ import clsx from 'classnames';
 import styles from './upload_dropzone.module.scss';
 import CloseIcon from '../svg/CloseIcon';
 
-const UploadDropZone = ({ isDisabled, setFile}) => {
+const UploadDropZone = ({ name, isDisabled, setFile}) => {
   const [isDisabledZone, setIsDisabledZone] = useState(true);
   const [docFile, setDocFile] = useState([]);
   const [rejFile, setRejFile] = useState([]);
@@ -61,7 +61,7 @@ const UploadDropZone = ({ isDisabled, setFile}) => {
           className: clsx(styles.dndZone, isDragAccept && styles.dragEnterZone),
         })}
       >
-        <input {...getInputProps()} className={styles.inputUpload} />
+        <input {...getInputProps()} name={name} className={styles.inputUpload} />
         {/* <div className={styles.uploadIcon}>
           <Image
             src="/upload-icon.svg"
