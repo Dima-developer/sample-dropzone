@@ -30,20 +30,20 @@ export default function Index() {
   // };
 
 
-  const handleSubmit = e => {
-    const data = { "form-name": "sampleform", name, file }
-    console.log('Data: ', data);
+  // const handleSubmit = e => {
+  //   const data = { "form-name": "sampleform", name, file }
+  //   console.log('Data: ', data);
 
-    fetch("/", {
-      method: "POST",
-      // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
-      body: encode(data)
-    })
-      .then(() => alert("Form Submission Successful!!"))
-      .catch(err => alert("Form Submission Failed!", err));
+  //   fetch("/", {
+  //     method: "POST",
+  //     // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
+  //     body: encode(data)
+  //   })
+  //     .then(() => alert("Form Submission Successful!!"))
+  //     .catch(err => alert("Form Submission Failed!", err));
 
-    e.preventDefault();
-  };
+  //   e.preventDefault();
+  // };
 
   return (
     <div>
@@ -52,7 +52,7 @@ export default function Index() {
         name="sampleform"
         method="POST"
         data-netlify="true"
-        onSubmit={handleSubmit} 
+        // onSubmit={handleSubmit} 
         >
         <input id='name' type="hidden" name="form-name" value="sampleform" />
 
