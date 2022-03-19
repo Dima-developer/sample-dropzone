@@ -21,7 +21,7 @@ const UploadDropZone = ({ name, isDisabled, setFile}) => {
   useEffect(() => {
     // setFile(docFile[0]);
     if (docFile.length > 0) {
-      setFile(docFile);
+      setFile(docFile[0]);
     } else {
       setFile([])
     }
