@@ -4,7 +4,7 @@ import UploadDropzone from '../components/UploadDropzone/UploadDropZone';
 
 export default function Index() {
   const [name, setName] = useState('');
-  const [file, setFile] = useState({});
+  const [file, setFile] = useState([]);
 
   const nameHandler = (e) => {
     setName(e.target.value)
