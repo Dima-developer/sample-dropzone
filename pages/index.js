@@ -52,6 +52,7 @@ export default function Index() {
         name="sampleform"
         method="POST"
         data-netlify="true"
+        encType="multipart-form/data"
         // onSubmit={handleSubmit} 
         >
         <input id='name' type="hidden" name="form-name" value="sampleform" />
