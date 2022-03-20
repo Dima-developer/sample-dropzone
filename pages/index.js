@@ -61,7 +61,7 @@ export default function Index() {
         <label htmlFor='name'>Name: </label>
         <input type='text' name='name' value={name} onChange={(e) => nameHandler(e)} />
 
-        
+        <input id="file" type="file" name="Atachment" />
 
         <UploadDropzone name="File" isDisabled={false} setFile={setFile} />
         
