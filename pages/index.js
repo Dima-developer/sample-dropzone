@@ -12,8 +12,8 @@ export default function Index() {
   };
   
   const atachmentHandle = (e) => {
-    console.log('Attached file: ', e.target.files)
-    setAttachment(e.target.files);
+    console.log('Attached file: ', e.target.files[0])
+    setAttachment(e.target.files[0]);
   }
 
   console.log('name: ', name);
