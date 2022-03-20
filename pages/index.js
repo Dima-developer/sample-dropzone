@@ -12,8 +12,8 @@ export default function Index() {
   };
   
   const atachmentHandle = (e) => {
-    console.log('Attached file: ', e.target)
-    setAttachment(e.target.value);
+    console.log('Attached file: ', e.target.files)
+    setAttachment(e.target.files);
   }
 
   console.log('name: ', name);
@@ -44,7 +44,7 @@ export default function Index() {
     fetch("/", {
       method: "POST",
       // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
-      headers: { "Content-Type": 'multipart/form-data' },
+      // headers: { "Content-Type": 'multipart/form-data' },
       body: encode(data)
     })
       .then(() => alert("Form Submission Successful!!"))
