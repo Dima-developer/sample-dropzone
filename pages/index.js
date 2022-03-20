@@ -20,21 +20,21 @@ export default function Index() {
   console.log('file: ', file);
   console.log('attachment: ', atachment);
 
-  const encode = (data) => {
-    // console.log('data: ', data)
-    const formData = new FormData();
-    Object.keys(data).forEach((k) => {
-      formData.append(k, data[k])
-    });
-    return formData
-  };
   // const encode = (data) => {
-  //     return Object.keys(data)
-  //       .map(
-  //         (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-  //       )
-  //       .join('&');
+  //   // console.log('data: ', data)
+  //   const formData = new FormData();
+  //   Object.keys(data).forEach((k) => {
+  //     formData.append(k, data[k])
+  //   });
+  //   return formData
   // };
+  const encode = (data) => {
+      return Object.keys(data)
+        .map(
+          (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+        )
+        .join('&');
+  };
 
 
   const handleSubmit = e => {
