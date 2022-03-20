@@ -21,9 +21,9 @@ const UploadDropZone = ({ name, isDisabled, setFile}) => {
   useEffect(() => {
     // setFile(docFile[0]);
     if (docFile.length > 0) {
-      setFile(docFile);
+      setFile(docFile[0].path);
     } else {
-      setFile([])
+      setFile('')
     }
   }, [docFile]);
   
@@ -56,13 +56,14 @@ const UploadDropZone = ({ name, isDisabled, setFile}) => {
         isDisabledZone && styles.disableZone
       )}
     >
-
+      <input style={{ display: 'none' }} type='file' name={name} />
+      
       <div
         {...getRootProps({
           className: clsx(styles.dndZone, isDragAccept && styles.dragEnterZone),
         })}
       >
-        <input {...getInputProps()} name={name} className={styles.inputUpload} />
+        <input {...getInputProps()} className={styles.inputUpload} />
         {/* <div className={styles.uploadIcon}>
           <Image
             src="/upload-icon.svg"
