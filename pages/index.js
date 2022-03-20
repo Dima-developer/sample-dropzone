@@ -44,6 +44,7 @@ export default function Index() {
     fetch("/", {
       method: "POST",
       // headers: { "Content-Type": 'multipart/form-data; boundary=random' },
+      headers: { "Content-Type": 'multipart/form-data' },
       body: encode(data)
     })
       .then(() => alert("Form Submission Successful!!"))
@@ -60,7 +61,7 @@ export default function Index() {
         method="POST"
         data-netlify="true"
         // encType="multipart-form/data"
-        encType="multipart/form-data"
+        // encType="multipart/form-data"
         onSubmit={handleSubmit} 
         >
         <input id='name' type="hidden" name="form-name" value="sampleform" />
