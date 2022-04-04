@@ -5,36 +5,37 @@ import UploadDropzone from '../components/UploadDropzone/UploadDropZone';
 export default function Index() {
   const [name, setName] = useState('');
   const [file, setFile] = useState('');
-  const [atachment, setAttachment] = useState([]);
+  // const [atachment, setAttachment] = useState([]);
 
   const nameHandler = (e) => {
     setName(e.target.value)
   };
   
-  const atachmentHandle = (e) => {
-    console.log('Attached file: ', e.target.files[0])
-    setAttachment(e.target.files[0]);
-  }
+  // const atachmentHandle = (e) => {
+  //   console.log('Attached file: ', e.target.files[0])
+  //   setAttachment(e.target.files[0]);
+  // }
 
   console.log('name: ', name);
   console.log('file: ', file);
-  console.log('attachment: ', atachment);
+  // console.log('attachment: ', atachment);
+
+  const encode = (data) => {
+    // console.log('data: ', data)
+    const formData = new FormData();
+    Object.keys(data).forEach((k) => {
+      formData.append(k, data[k])
+    });
+    return formData
+  };
 
   // const encode = (data) => {
-  //   // console.log('data: ', data)
-  //   const formData = new FormData();
-  //   Object.keys(data).forEach((k) => {
-  //     formData.append(k, data[k])
-  //   });
-  //   return formData
+  //     return Object.keys(data)
+  //       .map(
+  //         (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+  //       )
+  //       .join('&');
   // };
-  const encode = (data) => {
-      return Object.keys(data)
-        .map(
-          (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-        )
-        .join('&');
-  };
 
 
   const handleSubmit = e => {
@@ -69,7 +70,7 @@ export default function Index() {
         <label htmlFor='name'>Name: </label>
         <input type='text' name='name' value={name} onChange={(e) => nameHandler(e)} />
 
-        <input id="file" type="file" name="Atachment" onChange={(e) => atachmentHandle(e)} />
+        {/* <input id="file" type="file" name="Atachment" onChange={(e) => atachmentHandle(e)} /> */}
 
         <UploadDropzone name="file" isDisabled={false} setFile={setFile} />
         
