@@ -39,7 +39,7 @@ export default function Index() {
 
 
   const handleSubmit = e => {
-    const data = { "form-name": "sampleform", name, atachment, file }
+    const data = { "form-name": "sampleform", name, file }
     console.log('Data: ', data);
 
     fetch("/", {
